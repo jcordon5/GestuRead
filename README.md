@@ -16,7 +16,7 @@ GestuRead allows you reading digital books with navigation controlled by facial 
 To run this project, clone the repo, and open the project in Xcode:
 
 ```bash
-git clone [URL to Your Repository]
+git clone https://github.com/jcordon5/GestuRead.git
 ```
 
 ## Usage
