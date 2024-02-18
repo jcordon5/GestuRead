@@ -16,6 +16,9 @@
 		E306B67A2B7E70D500B285A6 /* GestuReadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E306B6792B7E70D500B285A6 /* GestuReadTests.swift */; };
 		E306B6842B7E70D500B285A6 /* GestuReadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E306B6832B7E70D500B285A6 /* GestuReadUITests.swift */; };
 		E306B6862B7E70D500B285A6 /* GestuReadUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E306B6852B7E70D500B285A6 /* GestuReadUITestsLaunchTests.swift */; };
+		E306B6932B7E737C00B285A6 /* BookSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E306B6922B7E737C00B285A6 /* BookSelectionViewController.swift */; };
+		E306B6952B7E797B00B285A6 /* PDFReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E306B6942B7E797B00B285A6 /* PDFReaderViewController.swift */; };
+		E3D1CF5E2B8233AA00990139 /* bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E3D1CF5D2B8233AA00990139 /* bookmark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		E306B67F2B7E70D500B285A6 /* GestuReadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GestuReadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E306B6832B7E70D500B285A6 /* GestuReadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestuReadUITests.swift; sourceTree = "<group>"; };
 		E306B6852B7E70D500B285A6 /* GestuReadUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestuReadUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E306B6922B7E737C00B285A6 /* BookSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSelectionViewController.swift; sourceTree = "<group>"; };
+		E306B6942B7E797B00B285A6 /* PDFReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReaderViewController.swift; sourceTree = "<group>"; };
+		E3D1CF5D2B8233AA00990139 /* bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookmark.png; path = ../../../../../../bookmark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		E306B6612B7E70D400B285A6 /* GestuRead */ = {
 			isa = PBXGroup;
 			children = (
+				E3D1CF5D2B8233AA00990139 /* bookmark.png */,
 				E306B6622B7E70D400B285A6 /* AppDelegate.swift */,
 				E306B6642B7E70D400B285A6 /* SceneDelegate.swift */,
 				E306B6662B7E70D400B285A6 /* ViewController.swift */,
@@ -106,6 +113,8 @@
 				E306B66B2B7E70D500B285A6 /* Assets.xcassets */,
 				E306B66D2B7E70D500B285A6 /* LaunchScreen.storyboard */,
 				E306B6702B7E70D500B285A6 /* Info.plist */,
+				E306B6922B7E737C00B285A6 /* BookSelectionViewController.swift */,
+				E306B6942B7E797B00B285A6 /* PDFReaderViewController.swift */,
 			);
 			path = GestuRead;
 			sourceTree = "<group>";
@@ -232,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E306B66F2B7E70D500B285A6 /* LaunchScreen.storyboard in Resources */,
+				E3D1CF5E2B8233AA00990139 /* bookmark.png in Resources */,
 				E306B66C2B7E70D500B285A6 /* Assets.xcassets in Resources */,
 				E306B66A2B7E70D400B285A6 /* Main.storyboard in Resources */,
 			);
@@ -258,9 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E306B6932B7E737C00B285A6 /* BookSelectionViewController.swift in Sources */,
 				E306B6672B7E70D400B285A6 /* ViewController.swift in Sources */,
 				E306B6632B7E70D400B285A6 /* AppDelegate.swift in Sources */,
 				E306B6652B7E70D400B285A6 /* SceneDelegate.swift in Sources */,
+				E306B6952B7E797B00B285A6 /* PDFReaderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,8 +447,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QR3YY95B67;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GestuRead/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -451,6 +465,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = master.GestuRead;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -462,8 +477,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QR3YY95B67;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GestuRead/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -478,6 +495,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = master.GestuRead;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
