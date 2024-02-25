@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  GestuRead
 //
-//  Created by Jose Antonio Cordon Muñoz on 15/2/24.
+//  Created by jcordon5 on 2024.
 //
 
 import UIKit
