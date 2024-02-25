@@ -2,7 +2,7 @@
 //  BookSelectionViewController.swift
 //  GestuRead
 //
-//  Created by Jose Antonio Cordon Muñoz on 15/2/24.
+//  Created by jcordon5 on 2024.
 //
 
 import Foundation
@@ -22,20 +22,15 @@ class BookSelectionViewController: UIViewController, UIDocumentPickerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let selectedFileURL = urls.first else {
             return
         }
-        //performSegue(withIdentifier: "showPDFReader", sender: selectedFileURL)
         
-        // Handle the selected file URL
-        // For now, we will just print the URL
         print("Selected file URL: \(selectedFileURL)")
-
-        // TODO: Transition to the next view with the selected book
         
         // Instantiate PDFReaderViewController
         if let pdfReaderVC = storyboard?.instantiateViewController(identifier: "PDFReaderViewController") as? PDFReaderViewController {
@@ -45,12 +40,4 @@ class BookSelectionViewController: UIViewController, UIDocumentPickerDelegate {
         }
     }
     
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPDFReader" {
-            if let pdfReaderVC = segue.destination as? PDFReaderViewController,
-               let selectedFileURL = sender as? URL {
-                pdfReaderVC.loadPDF(from: selectedFileURL)
-            }
-        }
-    }*/
 }

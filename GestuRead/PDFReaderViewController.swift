@@ -2,7 +2,7 @@
 //  PDFReaderViewController.swift
 //  GestuRead
 //
-//  Created by Jose Antonio Cordon Muñoz on 2024.
+//  Created by jcordon5 on 2024.
 //
 
 import Foundation
@@ -63,8 +63,7 @@ class PDFReaderViewController: UIViewController, UIGestureRecognizerDelegate, AR
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+       
         setupPDFView()
         setupGestureRecognizers()
         setupSceneView()
@@ -83,7 +82,7 @@ class PDFReaderViewController: UIViewController, UIGestureRecognizerDelegate, AR
         sceneView = ARSCNView(frame: self.view.frame)
         sceneView.delegate = self
         view.addSubview(sceneView)
-        view.sendSubviewToBack(sceneView)  // Ensure PDFView remains visible
+        view.sendSubviewToBack(sceneView)  // This ensures PDFView remains visible
     }
 
     
@@ -171,8 +170,8 @@ class PDFReaderViewController: UIViewController, UIGestureRecognizerDelegate, AR
         let pageBounds = pdfView.convert(page.bounds(for: .mediaBox), from: page)
     
         // Create a marker view
-        let markerView = UIImageView(image: UIImage(named: "bookmark")) // Replace "markerIcon" with your icon's name
-        markerView.frame = CGRect(x: pageBounds.minX, y: pageBounds.minY, width: 30, height: 30) // Adjust size as needed
+        let markerView = UIImageView(image: UIImage(named: "bookmark"))
+        markerView.frame = CGRect(x: pageBounds.minX, y: pageBounds.minY, width: 30, height: 30)
         pdfView.addSubview(markerView)
         pdfView.bringSubviewToFront(markerView)
 
@@ -224,17 +223,6 @@ class PDFReaderViewController: UIViewController, UIGestureRecognizerDelegate, AR
         return cornerRect.contains(point)
     }
 
-    func mapLookAtPointToScreenCoordinates(_ point: CGPoint, screenSize: CGSize) -> CGPoint {
-        
-        let multiplierX: CGFloat = 3
-        let multiplierY: CGFloat = 3
-        
-        let x = ((point.x * multiplierX) + 1) / 2 * screenSize.width     // Map from [-1, 1] to [0, width]
-        let y = ((1 - (point.y * multiplierY)) / 2) * screenSize.height  // Map from [-1, 1] to [0, height], flipping y-axis
-        
-        return CGPoint(x: x, y: y)
-    }
-
     private func detectGazePoint(faceAnchor: ARFaceAnchor) -> CGPoint {
         // Modified from https://github.com/Shiru99/AR-Eye-Tracker
         let lookAtPoint = faceAnchor.lookAtPoint
@@ -264,10 +252,6 @@ class PDFReaderViewController: UIViewController, UIGestureRecognizerDelegate, AR
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let faceAnchor = anchor as? ARFaceAnchor,
               faceAnchor.isTracked else { return }
-
-
-        //let lookAtPoint = faceAnchor.lookAtPoint
-        //let gazePoint = CGPoint(x: CGFloat(lookAtPoint.x), y: CGFloat(lookAtPoint.y))
                 
         let faceTransform = SCNMatrix4(faceAnchor.transform)
         let rotation = faceRotationFromMatrix(transform: faceTransform)
@@ -277,8 +261,8 @@ class PDFReaderViewController: UIViewController, UIGestureRecognizerDelegate, AR
     
         DispatchQueue.main.async {
             let screenSize = UIScreen.main.bounds.size
-            let cornerSize = CGSize(width: screenSize.width / 5, height: screenSize.height / 5) // Example size for corners
-            let mappedGazePoint = self.detectGazePoint(faceAnchor: faceAnchor) //self.mapLookAtPointToScreenCoordinates(gazePoint, screenSize: screenSize)
+            let cornerSize = CGSize(width: screenSize.width / 5, height: screenSize.height / 5)
+            let mappedGazePoint = self.detectGazePoint(faceAnchor: faceAnchor)
             self.gazeIndicator?.center = mappedGazePoint
             self.gazeIndicator?.isHidden = false
             print("Gaze Focus Point: \(mappedGazePoint)")
@@ -298,7 +282,7 @@ class PDFReaderViewController: UIViewController, UIGestureRecognizerDelegate, AR
                     self.pdfGoTo(next: true)
                     self.lastPageTurnTime = now
                 }
-                else if eyebrowRaised > 0.5 { // Adjust this threshold based on testing
+                else if eyebrowRaised > 0.5 { // This threshold is based on testing
                     self.addMarker()
                     self.lastPageTurnTime = now
                 }

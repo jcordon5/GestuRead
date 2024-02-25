@@ -54,7 +54,7 @@
 		E306B6852B7E70D500B285A6 /* GestuReadUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestuReadUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E306B6922B7E737C00B285A6 /* BookSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSelectionViewController.swift; sourceTree = "<group>"; };
 		E306B6942B7E797B00B285A6 /* PDFReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReaderViewController.swift; sourceTree = "<group>"; };
-		E3D1CF5D2B8233AA00990139 /* bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookmark.png; path = ../../../../../../bookmark.png; sourceTree = "<group>"; };
+		E3D1CF5D2B8233AA00990139 /* bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookmark.png; path = Assets.xcassets/bookmark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
